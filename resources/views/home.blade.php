@@ -19,9 +19,10 @@
                                 Synopsis:
                                 <p class="card-text">{{$book->synopsis}}</p> --}}
                             @else
-                                <h5 class="card-title">{{$product->image}}</h5>
-                                <h5 class="card-title">{{$product->title}}</h5>
-
+                                <img src="{{ asset('assets/'. $product->image) }}" alt="{{$product->image}}">
+                                <h3 class="card-title">{{$product->name}}</h3>
+                                <p>Rp {{$product->price}}</p>
+                                
                                 <a href="/home/{{$product->id}}" style="margin-top: 10px" class=" mt-auto detail-btn btn-secondary ">More Detail</a>
                             @endif
                         </div>

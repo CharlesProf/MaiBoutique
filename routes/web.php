@@ -28,7 +28,8 @@ Route::post('/signup',[UserController::class , 'addUser']);
 Route::middleware(['LoggedCheck'])->group(function () {
     Route::get('/home',[ProductController::class , 'showAllProducts']);
 
-    Route::get('/search',[HomeController::class , 'showSearchPage']);
+    Route::get('/search',[ProductController::class , 'showSearchedProducts']);
+    Route::post('/search',[ProductController::class , 'showSearchedProducts']);
 
     Route::middleware(['UserCheck'])->group(function () {
         Route::get('/cart',[HomeController::class , 'showCartPage']);
