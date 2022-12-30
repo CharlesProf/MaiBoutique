@@ -10,19 +10,13 @@
     <link rel="stylesheet" href="/css/app.css">
     <title>@yield('title')</title>
 </head>
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color:aqua)">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <h4>MaiBoutique</h4>
-                </li>
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand text-primary justify-content-right align-items-right"><b><u>MAI BOUTIQUE</u></b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
                 @if (Auth::check())
                     <li class="nav-item">
                         <a class="nav-link" href="/home">Home</a>
@@ -51,16 +45,13 @@
                     @endif
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/logout">Sign Out</a>
+                        <a class="nav-link btn btn-light text-primary" href="/logout">Sign Out</a>
                     </li>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link" href="/signin">Sign In</a>
+                        <a class="nav-link btn btn-light text-primary" href="/signin">Sign In</a>
                     </li>
                 @endif
-
-            </ul>
-        </div>
     </div>
 </nav>
 
