@@ -15,6 +15,8 @@ class CreateTransactiondetailTable extends Migration
     {
         Schema::create('transactiondetail', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger("item_id");
+            $table->foreign("item_id")->references("id")->on("products")->onUpdate("cascade")->onDelete("cascade");
             $table->timestamps();
         });
     }
