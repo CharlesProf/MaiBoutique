@@ -15,10 +15,6 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function showSearchPage(){
-        return view('search');
-    }
-
     public function showHistoryPage(){
         return view('history');
     }

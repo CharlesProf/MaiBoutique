@@ -35,10 +35,6 @@
 
             <button type="submit" style="margin-top: 30px">Submit</button>
 
-            <div>
-                <p>Already registered? <a href="/signin">Sign in here</a></p>
-            </div>
-
             @if($errors->any())
                 <div class="alert alert-danger">
                     <ul>
