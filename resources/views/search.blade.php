@@ -3,15 +3,15 @@
 @section('title', 'Search')
 
 @section('content')
-    <div action= "/">
+    <form action= "/search" method="GET">
         <input type="text" name="search" placeholder="Search items">
-        <button type="submit">Submit</button>
-    </div>
-    
+        <button type="submit"> Search </button>
+    </form>
+
     <div style="margin: 50px 100px">
         <div style="margin-top: 50px">
             <div class="row" style="justify-content:space-evenly">
-
+                {{-- Show searched products --}}
                 @foreach ($products as $product)
                     <div class="card" style="width: 18rem; margin-top: 25px">
                         <div class="card-body d-flex flex-column">
@@ -23,8 +23,10 @@
                         </div>
                     </div>
                 @endforeach
-
             </div>
+
+            {{-- Pagination --}}
+            {{$products->links()}}
         </div>
     </div>
 @endsection

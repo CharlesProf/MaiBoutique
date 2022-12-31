@@ -11,39 +11,22 @@
                     <div class="card" style="width: 18rem; margin-top: 25px">
                         <div class="card-body d-flex flex-column">
                             @if ($detail == 1 )
-                                {{-- <h5 class="card-title">{{$book->image}}</h5>
-                                <p class="card-title">Title: {{$book->title}}</p>
-                                <p class="card-text">Author: {{$book->author}}</p>
-                                <p class="card-text">Publisher: {{$publisherName}}</p>
-                                <p class="card-text">Year: {{$book->year}}</p>
-                                Synopsis:
-                                <p class="card-text">{{$book->synopsis}}</p> --}}
+                                {{-- Show product detail --}}
                             @else
+                                {{-- Show products --}}
                                 <img src="{{ asset('assets/'. $product->image) }}" alt="{{$product->image}}">
                                 <h3 class="card-title">{{$product->name}}</h3>
                                 <p>Rp {{$product->price}}</p>
-                                
+
                                 <a href="/home/{{$product->id}}" style="margin-top: 10px" class=" mt-auto detail-btn btn-secondary ">More Detail</a>
                             @endif
                         </div>
                     </div>
                 @endforeach
             </div>
-            {{-- <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                  <li class="page-item"><a class="page-link" href="{{$products->previousPageUrl()}}">Previous</a></li>
-                  @if ($i == $products->currentPage())
 
-
-                  @else
-                    @for ($i = 1; $i <= $products->lastPage(); $i++)
-                     <li class="page-item"><a class="page-link" href="{{$products->url($i)}}">{{$i}}</a></li>
-                    @endfor
-                  @endif
-
-                  <li class="page-item"><a class="page-link" href="{{$products->nextPageUrl()}}">Next</a></li>
-                </ul> --}}
-
+            {{-- Pagination --}}
+            {{$products->links()}}
         </div>
     </div>
 @endsection

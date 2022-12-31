@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
         //ADMIN ACCOUNT
         User::insert([
             'username' => 'Laravel Admin',
@@ -116,7 +115,29 @@ class DatabaseSeeder extends Seeder
             'image' => 'Yellow Jacket img'
         ]);
 
+        Product::insert([
+            'name' => 'Yellow Shorts',
+            'description' => 'Shorts in yellow',
+            'price' => 15000,
+            'stock' => 10,
+            'image' => 'Yellow Shirt img'
+        ]);
 
+        Product::insert([
+            'name' => 'Aquamarine Shorts',
+            'description' => 'Shorts in aquamarine',
+            'price' => 15000,
+            'stock' => 10,
+            'image' => 'Aquamarine Shorts img'
+        ]);
+
+        Product::insert([
+            'name' => 'Green Shorts',
+            'description' => 'Shorts in green',
+            'price' => 15000,
+            'stock' => 10,
+            'image' => 'Green Shorts img'
+        ]);
     }
 }
 
