@@ -10,23 +10,35 @@
                 @foreach ($products as $product)
                     <div class="card" style="width: 18rem; margin-top: 25px">
                         <div class="card-body d-flex flex-column">
+                            <img src="{{ asset('assets/'. $product->image) }}" alt="{{$product->image}}">
+                            <h3 class="card-title">{{$product->name}}</h3>
+                            <p>Rp {{$product->price}}</p>
+
                             @if ($detail == 1 )
                                 {{-- Show product detail --}}
-                            @else
-                                {{-- Show products --}}
-                                <img src="{{ asset('assets/'. $product->image) }}" alt="{{$product->image}}">
-                                <h3 class="card-title">{{$product->name}}</h3>
-                                <p>Rp {{$product->price}}</p>
+                                <h5><strong>Product Detail</strong></h5>
+                                <p>{{$product->description}}</p>
+                                <p><strong>Quantity:</strong></p>
 
-                                <a href="/home/{{$product->id}}" style="margin-top: 10px" class=" mt-auto detail-btn btn-secondary ">More Detail</a>
+                                {{-- Kolom input qty disini --}}
+
+                                {{-- Tombol add to cart disini--}}
+
+                                <a href="/home" style="margin-top: 10px" class=" mt-auto btn btn-danger ">Back</a>
+                            @else
+                                {{-- Show all products --}}
+                                <a href="/home/{{$product->id}}" style="margin-top: 10px" class=" mt-auto btn btn-primary ">More Detail</a>
                             @endif
                         </div>
                     </div>
                 @endforeach
             </div>
 
-            {{-- Pagination --}}
-            {{$products->links()}}
+            {{-- Do pagination if showing all products--}}
+            @if (! $detail == 1)
+                {{$products->links()}}
+            @endif
+
         </div>
     </div>
 @endsection

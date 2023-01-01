@@ -19,7 +19,7 @@
                             <h3 class="card-title">{{$product->name}}</h3>
                             <p>Rp {{$product->price}}</p>
 
-                            <a href="/home/{{$product->id}}" style="margin-top: 10px" class=" mt-auto detail-btn btn-secondary ">More Detail</a>
+                            <a href="/home/{{$product->id}}" style="margin-top: 10px" class=" mt-auto btn btn-primary ">More Detail</a>
                         </div>
                     </div>
                 @endforeach

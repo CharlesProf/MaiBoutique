@@ -15,14 +15,20 @@ class ProductController extends Controller{
         return view('home')->with(compact('products'))->with('detail',$detail);
     }
 
-    public function showSearchPage(){
+    public function showProductDetails(Request $request){
+        $id = $request->route('id');
+        $products = Product::where('id', $id)->get();
+        $detail = 1;
+        return view('home')
+                        ->with(compact('products'))
+                        ->with('detail', $detail);
+    }
 
+    public function showSearchPage(){
         return view('search');
     }
 
     public function showSearchedProducts(Request $request){
-        // $products = Product::where('id', Auth::id())->paginate(8);
-
         $search_query = $request->search;
 
         if(! $search_query == NULL){

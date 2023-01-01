@@ -27,6 +27,7 @@ Route::post('/signup',[UserController::class , 'addUser']);
 
 Route::middleware(['LoggedCheck'])->group(function () {
     Route::get('/home',[ProductController::class , 'showAllProducts']);
+    Route::get('/home/{id}',[ProductController::class , 'showProductDetails'])->where('id', '[0-9]+');
 
     Route::get('/search',[ProductController::class , 'showSearchedProducts']);
     Route::post('/search',[ProductController::class , 'showSearchedProducts']);
