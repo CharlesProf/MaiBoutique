@@ -18,10 +18,8 @@ class CreateTransactionheaderTable extends Migration
             $table->timestamp('purchased_date_at');
             $table->integer("total_purchase");
             $table->unsignedBigInteger("user_id");
-            $table->unsignedBigInteger("product_id");
             $table->foreign("transaction_id")->references("id")->on("transactiondetail")->onUpdate("cascade")->onDelete("cascade");
             $table->foreign("user_id")->references("id")->on("users")->onUpdate("cascade")->onDelete("cascade");
-            $table->foreign("product_id")->references("id")->on("products")->onUpdate("cascade")->onDelete("cascade");
             $table->timestamps();
         });
     }
