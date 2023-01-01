@@ -10,8 +10,7 @@ use Illuminate\Database\Eloquent\Collection;
 class ProductController extends Controller{
 
     public function showAllProducts(Request $request){
-        // $products = Product::where('id', Auth::id())->paginate(8);
-        $products = Product::all();
+        $products = Product::paginate(8);
         $detail = 0;
         return view('home')->with(compact('products'))->with('detail',$detail);
     }
@@ -25,10 +24,12 @@ class ProductController extends Controller{
         // $products = Product::where('id', Auth::id())->paginate(8);
 
         $search_query = $request->search;
-        $products = Product::all();
 
         if(! $search_query == NULL){
-            $products = Product::where('name', 'LIKE', "%$search_query%");
+            $products = Product::where('name', 'LIKE', "%$search_query%")->paginate(8)->appends(['search' => $search_query]);
+        }
+        else{
+            $products = Product::paginate(8);
         }
 
         return view('search')->with(compact('products'));
