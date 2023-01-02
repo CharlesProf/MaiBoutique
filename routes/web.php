@@ -51,6 +51,10 @@ Route::middleware(['LoggedCheck'])->group(function () {
         Route::post('/add', [ProductController::class, 'addProduct']);
     });
 
+    Route::get('store', 'StoreController@index');
+    Route::post('store/add-to-cart', 'StoreController@addToCart');
+    Route::get('cart', 'CartController@index');
+
     Route::get('/logout', [AuthController::class, 'logout']);
 });
 
