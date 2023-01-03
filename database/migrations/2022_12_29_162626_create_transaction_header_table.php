@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTransactionheaderTable extends Migration
+class CreateTransactionHeaderTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTransactionheaderTable extends Migration
      */
     public function up()
     {
-        Schema::create('transactionheader', function (Blueprint $table) {
+        Schema::create('transaction_header', function (Blueprint $table) {
             $table->unsignedBigInteger("transaction_id");
             $table->timestamp('purchased_date_at');
             $table->integer("total_purchase");
@@ -31,6 +31,6 @@ class CreateTransactionheaderTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactionheader');
+        Schema::dropIfExists('transaction_header');
     }
 }

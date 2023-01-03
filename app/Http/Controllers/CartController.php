@@ -1,8 +1,8 @@
 <?php
 
-namespace AppHttpControllers;
+namespace App\Http\Controllers;
 
-use IlluminateHttpRequest;
+use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
@@ -12,6 +12,6 @@ class CartController extends Controller
         if ($cart == null)
             $cart = [];
 
-        return view('home')->with('cart', $cart);
+        return view('cart')->with('cart', $cart);
     }
 }

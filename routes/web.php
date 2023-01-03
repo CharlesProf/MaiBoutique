@@ -4,6 +4,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StoreController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\ViewTransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,7 +37,7 @@ Route::middleware(['LoggedCheck'])->group(function () {
 
     Route::middleware(['UserCheck'])->group(function () {
         Route::get('/cart',[HomeController::class , 'showCartPage']);
-        Route::get('/history',[HomeController::class , 'showHistoryPage']);
+        Route::get('/history',[ViewTransactionController::class , 'view']);
     });
 
     Route::get('/profile',[UserController::class , 'showProfilePage']);
@@ -53,7 +56,7 @@ Route::middleware(['LoggedCheck'])->group(function () {
 
     Route::get('store', 'StoreController@index');
     Route::post('store/add-to-cart', 'StoreController@addToCart');
-    Route::get('cart', 'CartController@index');
+    Route::get('cart', 'App\Http\Controllers\CartController@index');
 
     Route::get('/logout', [AuthController::class, 'logout']);
 });
