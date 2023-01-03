@@ -62,19 +62,27 @@ class ProductController extends Controller{
 
         $ext = $request->file('image')->extension();
 
-        Storage::putFileAs('/public/assets', $image, $name.'.'.$ext);
+        $fileName = $request->name.'.'.$ext;
+        $request->image->move('assets', $fileName);
 
         Product::insert([
             'name' => $name,
             'description' => $desc,
             'price' => $price,
             'stock' => $stock,
-            'image' => $name.'.'.$ext
+            'image' => $fileName
         ]);
 
         return redirect()->back();
     }
 
+    public function deleteProduct(Request $request){
+        $id = $request->route('id');
+
+        Product::where('id', '=', $id)->delete();
+
+        return redirect('/home');
+    }
 }
 
 

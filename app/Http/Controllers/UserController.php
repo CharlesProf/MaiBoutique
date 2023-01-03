@@ -85,11 +85,11 @@ class UserController extends Controller
             'password' => bcrypt($password),
             'phone' => $phone,
             'address' => $address,
-            'role' => "user"
+            'role' => "member"
         ]);
 
         auth()->login($user);
 
-        return redirect('/profile');
+        return redirect('/home');
     }
 }

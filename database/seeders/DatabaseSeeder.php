@@ -17,9 +17,9 @@ class DatabaseSeeder extends Seeder
     {
         //ADMIN ACCOUNT
         User::insert([
-            'username' => 'Laravel Admin',
-            'email' => 'admin@laravel.com',
-            'password' => bcrypt('laravel123'),
+            'username' => 'MaiBoutique Admin',
+            'email' => 'admin@maiboutique.com',
+            'password' => bcrypt('maiboutique'),
             'phone' => '12345678910',
             'address' => 'Kencana Loka',
             'role' => 'admin'
@@ -27,12 +27,12 @@ class DatabaseSeeder extends Seeder
 
         //USER ACCOUNT
         User::insert([
-            'username' => 'Laravel User',
-            'email' => 'user@laravel.com',
-            'password' => bcrypt('laravel123'),
+            'username' => 'MaiBoutique Member',
+            'email' => 'member@maiboutique.com',
+            'password' => bcrypt('maiboutique'),
             'phone' => '08119701262',
             'address'=> 'Taman Chrysant',
-            'role' => 'user'
+            'role' => 'member'
         ]);
 
         Product::insert([
@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Shorts in blue',
             'price' => 15000,
             'stock' => 10,
-            'image' => 'Blue Shorts img'
+            'image' => 'blue shorts.jpg'
         ]);
 
         Product::insert([
@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Shorts in blue',
             'price' => 15000,
             'stock' => 10,
-            'image' => 'Blue Shorts img'
+            'image' => 'blue shorts.jpg'
         ]);
 
         Product::insert([
@@ -56,23 +56,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Shorts in blue',
             'price' => 15000,
             'stock' => 10,
-            'image' => 'Blue Shorts img'
-        ]);
-
-        Product::insert([
-            'name' => 'Blue Shorts',
-            'description' => 'Shorts in blue',
-            'price' => 15000,
-            'stock' => 10,
-            'image' => 'Blue Shorts img'
-        ]);
-
-        Product::insert([
-            'name' => 'Blue Shorts',
-            'description' => 'Shorts in blue',
-            'price' => 15000,
-            'stock' => 10,
-            'image' => 'Blue Shorts img'
+            'image' => 'blue shorts.jpg'
         ]);
 
         Product::insert([
@@ -80,7 +64,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Shirt in red',
             'price' => 15000,
             'stock' => 10,
-            'image' => 'Red Shirts img'
+            'image' => 'red shirt.jpg'
         ]);
 
         Product::insert([
@@ -88,7 +72,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Shorts in red',
             'price' => 15000,
             'stock' => 10,
-            'image' => 'Red Shorts img'
+            'image' => 'red shorts.jpg'
         ]);
 
         Product::insert([
@@ -96,7 +80,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Shirt in blue',
             'price' => 15000,
             'stock' => 10,
-            'image' => 'Blue Shirt img'
+            'image' => 'blue shirt.jpg'
         ]);
 
         Product::insert([
@@ -104,7 +88,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Shirt in yellow',
             'price' => 15000,
             'stock' => 10,
-            'image' => 'Yellow Shirt img'
+            'image' => 'yellow shirt.jpg'
         ]);
 
         Product::insert([
@@ -112,7 +96,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Jacket in yellow',
             'price' => 15000,
             'stock' => 10,
-            'image' => 'Yellow Jacket img'
+            'image' => 'yellow jacket.jpeg'
         ]);
 
         Product::insert([
@@ -120,7 +104,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Shorts in yellow',
             'price' => 15000,
             'stock' => 10,
-            'image' => 'Yellow Shirt img'
+            'image' => 'yellow shorts.jpg'
         ]);
 
         Product::insert([
@@ -128,7 +112,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Shorts in aquamarine',
             'price' => 15000,
             'stock' => 10,
-            'image' => 'Aquamarine Shorts img'
+            'image' => 'aquamarine shorts.jpg'
         ]);
 
         Product::insert([
@@ -136,7 +120,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Shorts in green',
             'price' => 15000,
             'stock' => 10,
-            'image' => 'Green Shorts img'
+            'image' => 'green shorts.png'
         ]);
     }
 }

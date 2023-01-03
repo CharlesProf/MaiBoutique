@@ -35,7 +35,7 @@ Route::middleware(['LoggedCheck'])->group(function () {
     Route::get('/search',[ProductController::class , 'showSearchedProducts']);
     Route::post('/search',[ProductController::class , 'showSearchedProducts']);
 
-    Route::middleware(['UserCheck'])->group(function () {
+    Route::middleware(['MemberCheck'])->group(function () {
         Route::get('/cart',[HomeController::class , 'showCartPage']);
         Route::get('/history',[ViewTransactionController::class , 'view']);
     });
@@ -52,6 +52,8 @@ Route::middleware(['LoggedCheck'])->group(function () {
     Route::middleware(['AdminCheck'])->group(function () {
         Route::get('/add', [ProductController::class, 'showAddPage']);
         Route::post('/add', [ProductController::class, 'addProduct']);
+
+        Route::get('/delete/{id}', [ProductController::class, 'deleteProduct']);
     });
 
     Route::get('store', 'StoreController@index');

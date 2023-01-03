@@ -21,8 +21,9 @@
                     <input type="password" class="form-control border border-2 border-dark rounded" name="password" placeholder="5-20 characters">
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-                    <label class="form-check-label" for="form2Example31"> Remember me </label>
+                    {{-- <input class="form-check-input" type="checkbox" value="" id="remeber" checked />
+                    <label class="form-check-label" for="form2Example31" name='remember' id="remember"> Remember me </label> --}}
+                    <p class="w-100"><input class="form-control-sm" type="checkbox" name="remember" id="remember">Remember me</p>
                 </div>
                 <button type="submit" class="btn btn-primary fw-semibold mt-3">Login</button>
 

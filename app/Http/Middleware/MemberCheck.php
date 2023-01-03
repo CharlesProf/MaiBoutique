@@ -6,13 +6,13 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class UserCheck
+class MemberCheck
 {
     public function handle(Request $request, Closure $next)
     {
-        // Check kalo user udah login dan bukan admin
+        // Tolak kalau user bukan member
         if(Auth::user()->role == 'admin'){
-            return abort('401', 'Admin is not authorized nor logged in');
+            return abort('401', 'User is not a member');
         }
 
         return $next($request);

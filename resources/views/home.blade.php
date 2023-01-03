@@ -19,16 +19,22 @@
                                 <h5><strong>Product Detail</strong></h5>
                                 <p>{{$product->description}}</p>
 
+                                @if (Auth::user()->role == 'member')
                                 {{-- Kolom input qty disini --}}
-                                <form action="/home" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <label for="Quantity"><b>Quantity</b></label>
-                                <div class="d-flex flex-row">
-                                    <input type="number" class="form-control" id="Quantity" aria-describedby="quantityHelp" placeholder="Enter Quantity">
-                                    {{-- Tombol add to cart disini--}}
-                                <button type="button" class="btn btn-block btn-success"  data-id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" data-description='{{$product->description}}'>Add</button>
-                                </div>
-                                </form>
+                                    <form action="/home" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        <label for="Quantity"><b>Quantity</b></label>
+                                        <div class="d-flex flex-row">
+                                            <input type="number" class="form-control" id="Quantity" aria-describedby="quantityHelp" placeholder="Enter Quantity">
+                                            {{-- Tombol add to cart disini--}}
+                                        <button type="button" class="btn btn-block btn-success"  data-id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" data-description='{{$product->description}}'>Add</button>
+                                        </div>
+                                    </form>
+                                @else
+                                    <div class="row">
+                                        <a href="/delete/{{$product->id}}" style="margin-top: 10px" class="btn btn-danger">Delete</a>
+                                    </div>
+                                @endif
 
                                 <br>
                                 <a href="/home" style="margin-top: 10px" class=" mt-auto btn btn-danger ">Back</a>

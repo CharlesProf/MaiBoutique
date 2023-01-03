@@ -25,7 +25,7 @@
                         <a class="nav-link" href="/search">Search</a>
                     </li>
 
-                    @if (Auth::user()->role == 'user')
+                    @if (Auth::user()->role == 'member')
                         <li class="nav-item">
                             <a class="nav-link" href="/cart">Cart</a>
                         </li>

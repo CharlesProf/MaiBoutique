@@ -10,9 +10,9 @@ class LoggedCheck
 {
     public function handle(Request $request, Closure $next)
     {
-        // Check kalo user udah login dan admin
-        if(!Auth::check()){
-            return abort('401', 'User is not admin nor logged in');
+        // Tolak kalau user belum login
+        if(! Auth::check()){
+            return abort('401', 'User is not logged in');
         }
 
         return $next($request);

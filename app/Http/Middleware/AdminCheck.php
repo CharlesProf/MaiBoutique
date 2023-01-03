@@ -10,9 +10,9 @@ class AdminCheck
 {
     public function handle(Request $request, Closure $next)
     {
-        // Check kalo user udah login dan admin
-        if(Auth::user()->role == 'user'){
-            return abort('401', 'User is not admin nor logged in');
+        // Tolak kalau user itu bukan admin
+        if(Auth::user()->role == 'member'){
+            return abort('401', 'User is not an admin');
         }
 
         return $next($request);
